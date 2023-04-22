@@ -8,6 +8,7 @@ const StartPageGlobe = () => {
     useEffect(() => {
         globeRef.current.controls().autoRotate = true; // enable autorotation
         globeRef.current.controls().autoRotateSpeed = 0.5; // set the speed of autorotation
+        globeRef.current.controls().enableZoom = false;
     }, []);
 
     
@@ -19,6 +20,7 @@ const StartPageGlobe = () => {
                 height='500'
                 showAtmosphere={false}
                 backgroundColor='#000000'
+                atmosphereAltitude={1}
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-water.png"
             />
         </div>

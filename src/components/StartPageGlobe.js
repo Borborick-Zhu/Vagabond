@@ -17,6 +17,8 @@ const StartPageGlobe = () => {
                 ref={globeRef}
                 width='500'
                 height='500'
+                showAtmosphere={false}
+                backgroundColor='#000000'
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-water.png"
             />
         </div>

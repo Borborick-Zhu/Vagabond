@@ -42,7 +42,8 @@ const InterestsPage = () => {
 
     useEffect(() => {
         const parsed = JSON.parse(localStorage.getItem('interests') || '[]');
-        setInterests(parsed);
+        if (parsed != [])
+            setInterests(parsed);
     }, []);
 
     const handleItemClick = (type) => {

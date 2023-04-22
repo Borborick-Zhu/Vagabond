@@ -5,6 +5,8 @@ import cities from '../datasets/ne_110m_populated_places_simple.json'
 
 import Navbar from '../components/Navbar';
 
+import { Link } from 'react-router-dom';
+
 const GlobePage = () => {
 
     const [places, setPlaces] = useState([]);
@@ -38,10 +40,6 @@ const GlobePage = () => {
         //returns the name of the city so that it can be parsed. 
         return name;
     }
-
-    const redirectToNewPage = () => {
-        navigate.push('/new-page');
-    };
 
     const labelHtml = (text) => {
         const decodedText = convertSpecialChars(text);
@@ -83,7 +81,9 @@ const GlobePage = () => {
                     />
                     {selectedCity && <div className="overlay-text">
                         Selected City: {selectedCity}
-                        <button onClick={redirectToNewPage}>&rarr;</button>
+                        <Link to='/info' state={{ city: selectedCity }}>
+                            <button>&rarr;</button>
+                        </Link>
                         </div>}
                 </div>
             </div>

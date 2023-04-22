@@ -3,6 +3,8 @@ import Globe from 'react-globe.gl';
 import { useNavigate } from 'react-router-dom';
 import cities from '../datasets/ne_110m_populated_places_simple.json'
 
+import Navbar from '../components/Navbar';
+
 const GlobePage = () => {
 
     const [places, setPlaces] = useState([]);
@@ -27,7 +29,7 @@ const GlobePage = () => {
                 {
                     lat: coordinates[1],
                     lng: coordinates[0],
-                    altitude: 2,
+                    altitude: 2.5,
                 },
                 3000
             );
@@ -60,25 +62,29 @@ const GlobePage = () => {
     };
 
     return (
-        <div className="globe-container">
-            <Globe
-                ref={globeRef}
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-                backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-                labelsData={places}
-                labelLat={d => d.geometry.coordinates[1]}
-                labelLng={d => d.geometry.coordinates[0]}
-                labelText={d => removeDiacritics(d.properties.name)}
-                labelSize={d => 0.4}
-                labelDotRadius={d => 0.2}
-                labelColor={() => 'rgba(255, 255, 255, .9)'}
-                labelResolution={10}
-                onLabelClick={handleLabelClick}
-            />
-            {selectedCity && <div className="overlay-text">
-                Selected City: {selectedCity}
-                <button onClick={redirectToNewPage}>&rarr;</button>
-                </div>}
+        <div>
+            <Navbar />
+            <div className='page-wrapper'>
+                <div className="globe-container">
+                    <Globe
+                        ref={globeRef}
+                        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+                        labelsData={places}
+                        labelLat={d => d.geometry.coordinates[1]}
+                        labelLng={d => d.geometry.coordinates[0]}
+                        labelText={d => removeDiacritics(d.properties.name)}
+                        labelSize={d => 0.4}
+                        labelDotRadius={d => 0.2}
+                        labelColor={() => 'rgba(255, 255, 255, .9)'}
+                        labelResolution={10}
+                        onLabelClick={handleLabelClick}
+                    />
+                    {selectedCity && <div className="overlay-text">
+                        Selected City: {selectedCity}
+                        <button onClick={redirectToNewPage}>&rarr;</button>
+                        </div>}
+                </div>
+            </div>
         </div>
     );
 };

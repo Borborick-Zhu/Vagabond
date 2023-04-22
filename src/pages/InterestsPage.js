@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
 
-// Images
-import food from '../assets/food.jpeg';
-
 const InterestsPage = () => {
     const [interests, setInterests] = useState([
         {

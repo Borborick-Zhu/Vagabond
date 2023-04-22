@@ -68,6 +68,8 @@ const GlobePage = () => {
                 <div className="globe-container">
                     <Globe
                         ref={globeRef}
+                        showAtmosphere={false}
+                        backgroundColor='#000000'
                         globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
                         labelsData={places}
                         labelLat={d => d.geometry.coordinates[1]}

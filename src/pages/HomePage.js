@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
+import StartPageGlobe from '../components/StartPageGlobe';
 
 const HomePage = () => {
     return (
@@ -19,7 +20,9 @@ const HomePage = () => {
                                 </button>
                             </Link>
                         </div>
-                        <div className='globe-placeholder' />
+                        <div className='globe-placeholder'>
+                            <StartPageGlobe />
+                        </div>
                     </div>
                 </div>
             </div>

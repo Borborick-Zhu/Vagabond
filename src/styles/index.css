@@ -49,14 +49,14 @@ code {
 .hero-text {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	justify-content: center;
 	padding-right: 60px;
 }
 .globe-placeholder {
-	width: 300px;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 	flex-shrink: 0;
-	background-color: rgb(20, 20, 30);
+	transform: translateY(-50px);
 }
 .primary-button {
 	padding: 10px 16px;
@@ -175,4 +175,9 @@ code {
   color: white;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+.globe {
+	width: 300px;
+	height: 300px;
 }

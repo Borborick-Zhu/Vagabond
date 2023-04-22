@@ -12,9 +12,11 @@ const StartPageGlobe = () => {
 
     
     return (
-        <div>
-            <Globe
+        <div className='globe'>
+            <Globe 
                 ref={globeRef}
+                width='500'
+                height='500'
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             />
         </div>

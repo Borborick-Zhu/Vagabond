@@ -39,6 +39,9 @@ code {
 	width: 100%;
 	max-width: 900px;
 }
+.margin-top {
+	margin-top: 120px;
+}
 .hero {
 	display: flex;
 }
@@ -79,20 +82,39 @@ code {
 .interests-grid {
 	margin-top: 40px;
 	display: inline-grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	column-gap: 20px;
 	row-gap: 20px;
+	height: 340px;
+	overflow-y: scroll;
 }
+.interests-grid::-webkit-scrollbar {
+	width: 8px;
+}
+
+.interests-grid::-webkit-scrollbar-thumb {
+	background-color: white;
+}
+
+.interests-grid::-webkit-scrollbar-track {
+	background-color: black;
+	background-clip: content-box;
+}
+
+
 .interest-wrapper {
 	position: relative;
 	width: 150px;
 	height: 150px;
 	overflow: hidden;
-	border: 1.5px solid black;
+	border: 1.5px solid white;
 	cursor: hover;
+	transition: background-color 0.1s;
 }
 .interest-wrapper.selected {
 	border: 1.5px solid white;
+	background-color: white;
+	color: black;
 }
 .interest-img-wrapper {
 	position: absolute;

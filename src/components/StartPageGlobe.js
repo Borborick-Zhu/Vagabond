@@ -16,8 +16,8 @@ const StartPageGlobe = () => {
         <div className='globe'>
             <Globe 
                 ref={globeRef}
-                width='500'
-                height='500'
+                width={500}
+                height={500}
                 showAtmosphere={false}
                 backgroundColor='#000000'
                 atmosphereAltitude={1}

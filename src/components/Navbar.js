@@ -9,7 +9,7 @@ const Navbar = () => {
                 <Link className='logo-wrapper'
                     to='/'>
                     <FaGlobeAsia className='logo-icon'/>
-                    <p className='logo-text'>React Globe App</p>
+                    <p className='logo-text'>Vagabond</p>
                 </Link>
             </div>
         </div>
